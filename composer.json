@@ -1,0 +1,17 @@
+{
+    "name": "php/phpvmc-framework",
+    "description": "build a php mvc framework",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "QuocTrang13061990",
+            "email": "tqtwip@gmail.com"
+        }
+    ],
+    "require": {}
+}

@@ -1,0 +1,10 @@
+# Link
+    - https://www.youtube.com/watch?v=6ERdu4k62wI&t=18638s
+
+# download va huong dan su dung composer
+    - https://www.youtube.com/watch?v=WCZHrvBjrqo
+
+# Operator
+    - $variable = expr1 ?? expr2;
+        + PHP 7, Toán tử Elvis.
+        + Ý Nghĩa: Nếu expr1 tồn tại và khác NULL thì expr1 còn không thì expr2.
