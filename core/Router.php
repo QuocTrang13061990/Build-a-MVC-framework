@@ -1,9 +1,12 @@
 <?php
 
 namespace app\core;
+
+use RuntimeException;
+
 class Router {
     public Request $request;
-    protected array $routes = array();
+    public array $routes = array();
 
     /**
      * Router constructor
@@ -33,12 +36,21 @@ class Router {
   
     public function resolve() {
         $path = $this->request->getPath();
-        $method = $this->request->getMethod();
+        $method = $this->request->getMethod(); // get, post
         $callback = $this->routes[$method][$path] ?? false;
+        var_dump($path);exit;
         if ($callback === false) {
-            echo 'not found';
-            exit;
+            return 'not found';
         }
-        echo call_user_func($callback);
+
+        if (is_string($callback)) {
+            return $this->renderView($callback);
+        }
+
+        return call_user_func($callback);
+    }
+
+    public function renderView($view) {
+        include_once __DIR__ . '/../views/' . $view . '.php';
     }
 }
